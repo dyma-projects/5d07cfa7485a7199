@@ -5,7 +5,7 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
   selector: '[MyColorDirective]'
 })
 export class ColorDirective {
-  public colorText: string;
+  private colorText: string;
   private element: ElementRef;
 
   constructor(el: ElementRef) {
@@ -34,7 +34,7 @@ export class ColorDirective {
     this.changeColor();
    }
 
-   changeColor() {
+   private changeColor() {
     this.element.nativeElement.style.color = this.colorText;
    }
 
